@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emootion</title>
+    <style>    
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('emootion.jpg');
+            background-size: contain;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            font-family: 'Ubuntu Mono', monospace; 
+        }
+
+        .container-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            margin-top: 70%;
+        }
+
+        .container {
+            position: relative;
+            width: 190px;
+            height: 59px;
+            border-radius: 22px;
+            margin-bottom: 9px;
+            display: flex;
+            align-items: center;
+            padding-right: 10px;
+            font-size: 18px;
+            background-color: #546D8E; 
+            color: white;
+        }
+
+        .container img {
+            position: absolute;
+            right: 10px; 
+            width: 45px;
+            height: auto;
+        }
+
+        .container:nth-child(1) {
+            background-color: #546D8E; 
+            margin-left: 0.5%;
+        }
+
+        .container:nth-child(2) {
+            background-color: #990030; 
+            margin-left: 0.5%;
+        }
+
+        .container:nth-child(3) {
+            background-color: #7C0CCC;
+            margin-left: 0.5%;
+        }
+
+
+        .container:nth-child(4) {
+            background-color: #FFB300;
+            margin-left: 0.5%;
+        }
+
+        .container:nth-child(5) {
+            background-color: #A3A3A3;
+            margin-left: 0.5%;
+        }
+
+        .container:nth-child(6) {
+            background-color: #CC587D; 
+            margin-left: 0.5%;
+        }
+        .btn-plus {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: blue;
+            color: white;
+            font-size: 24px;
+            border: none;
+            cursor: pointer;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-wrapper">
+        <div class="container">Segunda-feira <img src="segunda.png" alt="Segunda-feira"></div>
+        <div class="container">Terça-feira <img src="terca.png" alt="Terça-feira"></div>
+        <div class="container">Quarta-feira <img src="quarta.png" alt="Quarta-feira"></div>
+        <div class="container">Quinta-feira <img src="quinta.png" alt="Quinta-feira"></div>
+        <div class="container">Sexta-feira <img src="sexta.png" alt="Sexta-feira"></div>
+        <div class="container">Sábado <img src="sabado.png" alt="Sábado"></div>
+    </div>
+    
+    <button class="btn-plus" onclick="redirectToAnotherPage()">+</button>
+
+    <script>
+        function redirectToAnotherPage() {
+            window.location.href = "adicionar.html";
+        }
+    </script>
+</body>
+</html>

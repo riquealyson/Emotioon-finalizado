@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diário de Emoções</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            width: 90%;
+            margin: 5% auto;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .title-bar {
+            background-color: #f0f0f0;
+            border-bottom: 1px solid #ccc;
+            padding: 5px 10px;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .title-bar h1 {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .content {
+            min-height: 200px;
+            padding: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+            resize: none;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        .footer {
+            border-top: 1px solid #ccc;
+            padding: 10px;
+            text-align: right;
+        }
+
+        .footer button {
+            padding: 5px 10px;
+            border: none;
+            background-color: #23c2c5;
+            color: white;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .emotions-tab {
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            margin-top: 20px;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            object-fit:fill;
+            
+        }
+
+        .emotions-tab img {
+            width: 30px;
+            height: auto;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        .message {
+            background-color: #23c2c5;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title-bar">
+            <h1>Meu Diário de Emoções</h1>
+        </div>
+        <div class="content">
+            <textarea placeholder="Como você está se sentindo hoje..."></textarea>
+        </div>
+        <div class="footer">
+            <button onclick="mostrarMensagem()">Salvar</button>
+            <button onclick="redirectToAnotherPage()">Voltar</button>
+        </div>
+        <div class="emotions-tab">
+            <span>Emoções:</span>
+            <img src="segunda.png" alt="Segunda-feira" title="Tristeza" onclick="selecionarEmocao('Tristeza')">
+            <img src="terca.png" alt="Terça-feira" title="Raiva" onclick="selecionarEmocao('Raiva')">
+            <img src="quarta.png" alt="Quarta-feira" title="Medo" onclick="selecionarEmocao('Medo')">
+            <img src="quinta.png" alt="Quinta-feira" title="Feliz" onclick="selecionarEmocao('Feliz')">
+            <img src="sexta.png" alt="Sexta-feira" title="Neutro" onclick="selecionarEmocao('Neutro')">
+            <img src="sabado.png" alt="Sábado" title="Apaixonado" onclick="selecionarEmocao('Apaixonado')">
+        </div>
+    </div>
+
+    <script>
+        function selecionarEmocao(emocao) {
+            alert('Você selecionou que seu humor do dia foi: ' + emocao);
+        }
+
+        function mostrarMensagem() {
+            var mensagem = document.createElement('div');
+            mensagem.classList.add('message');
+            mensagem.textContent = 'Humor do dia salvo com sucesso';
+            document.querySelector('.container').appendChild(mensagem);
+            setTimeout(function() {
+                mensagem.remove();
+            }, 3000);
+            document.body.appendChild(selectedEmotion);
+
+            setTimeout(function() {
+                mensagem.remove();
+                selectedEmotion.remove();
+            }, 3000);
+
+        }
+            function redirectToAnotherPage() {
+            window.location.href = "index.html";
+        } 
+    </script>
+</body>
+</html> 
